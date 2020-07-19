@@ -1,0 +1,22 @@
+1) Line 5-49 ---->Initialization
+2) Line 51-75---->Model Plotting
+3) Line 77-182--->Forward Modelling
+4) Line 183-196-->Noise Interference
+5) Line 198-1529->Inversi 
+6) Line 1533-1550->Plotting Slowness Inversi
+7) Line 1552-1569->Plotting Delta Inversi
+
+1) Terdapat beberapa logic statement untuk menyesuaikan informasi inputan yang diberikan,
+Beberapa parameter seperti delta anisotropi dan iterasi juga disedikan untuk memudahkan dalam variasi
+model.
+2) Model plotting terdiri atas block colouring (layers) dan raytracing antar rec-shot beserta koordinatnya
+3) Perhitungan terfokus pada raypath dan travel times. raypath cukup diasumsikan lurus sedangkan
+travel time mempertimbang delta anisotropi.
+4) Noise interference akan menambahkan rasio noise yang dihasilkan dari perhitungan untuk melihat kestabilan kode inversi
+Noise yang digunakan berupa random yang lebih mengenai pada aplikasi dunia nyata. 
+5) Setiap tahapan inversi melibatkan perhitungan ray tracing secara menyeluruh sesuai dengan raypath model. Setiap kali
+tahapan berlangsung terdapat perturbasi yang perlu disimpan dalam variabel global untuk diakses oleh model inversi slowness dan delta
+6) Plotting ini meratakan hasil inversi ke dalam bentuk grid yang bisa diatur nilai dan visualisasinya
+7) Sama seperti no 6 tetapi hal ini dilakukan untuk melihat sebaran delta anisotropi sehingga dapat diketahui
+mana yang isotropi dan mana yang anisotropi. 
+
